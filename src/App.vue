@@ -21,12 +21,15 @@ export default {
 
 #app {
   text-align: center;
-}
 
-header {
+  header {
   background-color: #0B0B8B;
   padding: 3rem 0 3rem 0;
 
+  }
+  
 }
+
+
 
 </style>

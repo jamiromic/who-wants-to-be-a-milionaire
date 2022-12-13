@@ -2,7 +2,7 @@
     <div>
         <div class="container">
             <div class="triangle left"></div>
-            <span>{{ questions[this.casualQuestion].question }}</span>
+            <span>{{ questions[casualNumber].question }}</span>
             <div class="triangle right"></div>
         </div>
 
@@ -11,27 +11,19 @@
 
 <script>
 import questions from '@/questions';
+import casualNumber from '@/casual';
 
     export default {
         name: 'QuestionComponent',
 
         data() {
             return {
-                questions : questions
+                questions : questions,
+                casualNumber : casualNumber
             };
         
         },
-
-        computed: {
-            casualQuestion() {
-                const num = Math.round(Math.random() * 3);
-                return num;
-            } 
-
-        },
-        // mounted() {
-        //     this.casualQuestion;
-        // },
+        
     }
 
 </script>

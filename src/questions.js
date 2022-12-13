@@ -1,7 +1,7 @@
 const questions = [
     {
-        'question' : 'Come si chiama il paese più cesso del mondo',
-        'response' : [
+        'question' : 'Come si chiama il paese più cesso del mondo ?',
+        'responses' : [
             {
                 'text' : 'Paternò',
                 'result' : true
@@ -29,8 +29,8 @@ const questions = [
         
     },
     {
-        'question' : 'La squadra più schifosa e ladra e delinquente al mondo',
-        'response' : [
+        'question' : 'La squadra più schifosa, ladra e delinquente al mondo ?',
+        'responses' : [
             {
                 'text' : 'Milan',
                 'result' : false
@@ -58,8 +58,8 @@ const questions = [
         
     },
     {
-        'question' : 'Come si chiama la donna più bella al mondo',
-        'response' : [
+        'question' : 'Come si chiama la donna più bella al mondo ?',
+        'responses' : [
             {
                 'text' : 'Jessica',
                 'result' : false
@@ -87,8 +87,8 @@ const questions = [
         
     },
     {
-        'question' : 'La squadra migliore al mondo',
-        'response' : [
+        'question' : 'La squadra migliore al mondo ?',
+        'responses' : [
             {
                 'text' : 'Inter',
                 'result' : true

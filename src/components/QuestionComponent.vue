@@ -2,7 +2,7 @@
     <div>
         <div class="container">
             <div class="triangle left"></div>
-            <span>{{ questions[casualNumber].question }}</span>
+            <span>{{ questions[randomNumber].question }}</span>
             <div class="triangle right"></div>
         </div>
 
@@ -11,15 +11,14 @@
 
 <script>
 import questions from '@/questions';
-import casualNumber from '@/casual';
 
     export default {
         name: 'QuestionComponent',
+        props: ['randomNumber'],
 
         data() {
             return {
                 questions : questions,
-                casualNumber : casualNumber
             };
         
         },

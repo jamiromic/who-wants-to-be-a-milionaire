@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <img width="370" alt="Logo Who Want To Be A Milionaire" src="./assets/Logo.png">
+      <img width="370" alt="Logo Who Want To Be A Milionaire" src="./assets/logo.png">
     </header>
     <ContainerComponent/>
   </div>

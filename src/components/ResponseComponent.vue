@@ -1,32 +1,26 @@
 <template>
     <div>
         <div class="wrapper">
-            <div @click="clickOn()" v-for="(response,i) in questions[casualNumber].responses" :key="i"
+            <div @click="clickOn()" v-for="(response,i) in questions[randomNumber].responses" :key="i"
             class="response">
                 <div class="triangle left"></div>
                 <span :id="i">{{ response.text }}</span>
                 <div class="triangle right"></div>
             </div>
         </div>
-        <div class="you_win_lose">
-           <h1 class="_result lose">Mi Dispiace, hai perso miseramente! Vergognati !!!</h1>
-           <h1 class="_result win">Bravo, hai vinto...tu conosci davvero Michele</h1>
-        </div>
     </div>
 </template>
 
 <script>
 import questions from '@/questions';
-import casualNumber from '@/casual';
 
     export default {
         name: 'ResponseComponent',
+        props: ['randomNumber'],
         
         data() {
             return {
                 questions : questions,
-                casualNumber : casualNumber
-                
             };
         
         },
@@ -34,11 +28,9 @@ import casualNumber from '@/casual';
             clickOn() {
                 const elClicked = event.target;
                 const elClickedId = event.target.id;
-                const responseUserObj = questions[casualNumber].responses[elClickedId];
+                const responseUserObj = questions[this.randomNumber].responses[elClickedId];
                 
                 const responseUser = responseUserObj.result;
-
-
 
                 if (responseUser) {
                     elClicked.classList.add('isTrue');
@@ -47,16 +39,19 @@ import casualNumber from '@/casual';
                     elClicked.classList.add('isFalse');
                 }
 
-                const counter = 1;
-
-                if (counter === 1) {
-                    setTimeout(() => location.reload(), 2000)
-                    
-                }
-
+                setTimeout(() => {
+                    // Rimuovi la classe 'isTrue' o 'isFalse' dall'elemento
+                    elClicked.classList.remove('isTrue');
+                    elClicked.classList.remove('isFalse');
+                    // Modifico il valore della prop dal componente figlio
+                    this.$emit('update:randomNumber', this.casualNumber());
+                }, 2000); // Cambia il numero dopo 5 secondi
 
                 return responseUser;
-            } 
+            },
+            casualNumber() {
+                return Math.round(Math.random() * 3);
+            },
         },
        
     }
@@ -105,50 +100,26 @@ import casualNumber from '@/casual';
         width:  4rem;
         height: 4rem;
 
-        &.left  { 
-        transform: rotate(30deg) skewX(-30deg) scale(1,.866); 
-        border-left: 2px solid white; 
-        border-bottom: 2px solid white;
-        border-radius: 0 0 0 50%;
-        margin-right: -1.90rem;
-        
+            &.left  { 
+            transform: rotate(30deg) skewX(-30deg) scale(1,.866); 
+            border-left: 2px solid white; 
+            border-bottom: 2px solid white;
+            border-radius: 0 0 0 50%;
+            margin-right: -1.90rem;
+            
+            }
+            &.right { 
+            transform: rotate(30deg) skewX(-30deg) scale(1,.866); 
+            border-right: 2px solid white; 
+            border-top: 2px solid white;
+            margin-left: -2rem;
+            border-radius: 0 50% 0 0;
+            
+            }
+
         }
-        &.right { 
-        transform: rotate(30deg) skewX(-30deg) scale(1,.866); 
-        border-right: 2px solid white; 
-        border-top: 2px solid white;
-        margin-left: -2rem;
-        border-radius: 0 50% 0 0;
-        
-        }
-
-
-
 
     }
-        
-
-    
-
-  
-    
-
-
-    }
-
-    .you_win_lose {
-        display: none;
-        
-       ._result {
-        display: none;
-        
-        }
-    }
-
-
-
 }
-
-
 
 </style>

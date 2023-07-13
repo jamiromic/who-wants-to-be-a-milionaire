@@ -55,7 +55,7 @@ import questions from '@/questions';
                     // Modifico il valore della prop dal componente figlio
                     this.$emit('update:randomNumber', this.casualNumber());
                     
-                }, 2000); // Cambia il numero dopo 2 secondi
+                }, 1000); // Cambia il numero dopo 2 secondi
 
                 return responseUser;
             },

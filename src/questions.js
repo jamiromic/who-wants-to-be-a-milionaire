@@ -1,119 +1,273 @@
 const questions = [
     {
-        'question' : 'Come si chiama il paese più cesso del mondo ?',
+        'question' : 'Quale paese ha il maggior numero di isole al mondo ?',
         'responses' : [
             {
-                'text' : 'Paternò',
+                'text' : 'Indonesia',
+                'result' : false
+
+            },
+            {
+                'text' : 'Finlandia',
+                'result' : false
+
+            },
+            {
+                'text' : 'Svezia',
                 'result' : true
 
             },
             {
-                'text' : 'Catania',
-                'result' : false
-
-            },
-            {
-                'text' : 'Belpasso',
-                'result' : false
-
-            },
-            {
-                'text' : 'Adrano',
+                'text' : 'Norvegia',
                 'result' : false
 
             }
 
         ]
             
+    },
+    {
+        'question' : 'Qual è la capitale del Canada ?',
+        'responses' : [
+            {
+                'text' : 'Toronto',
+                'result' : false
+
+            },
+            {
+                'text' : 'Vancouver',
+                'result' : false
+
+            },
+            {
+                'text' : 'Montréal',
+                'result' : false
+
+            },
+            {
+                'text' : 'Ottawa',
+                'result' : true
+
+            }
+
+        ]
             
+    },
+    {
+        'question' : 'Qual è il nome gergale di New York City, usato dai suoi abitanti ?',
+        'responses' : [
+            {
+                'text' : 'New City',
+                'result' : false
+
+            },
+            {
+                'text' : 'York City',
+                'result' : false
+
+            },
+            {
+                'text' : 'Gotham',
+                'result' : true
+
+            },
+            {
+                'text' : 'AlphaTown',
+                'result' : false
+
+            }
+
+        ]
         
     },
     {
-        'question' : 'La squadra più schifosa, ladra e delinquente al mondo ?',
+        'question' : 'Quale artista ha dipinto il soffitto della Cappella Sistina a Roma ?',
         'responses' : [
             {
-                'text' : 'Milan',
+                'text' : 'Leonardo',
                 'result' : false
 
             },
             {
-                'text' : 'Juventus',
+                'text' : 'Michelangelo',
                 'result' : true
 
             },
             {
-                'text' : 'Lazio',
+                'text' : 'Donatello',
                 'result' : false
 
             },
             {
-                'text' : 'Roma',
+                'text' : 'Raffaello',
                 'result' : false
 
             }
 
         ]
-            
-            
         
     },
     {
-        'question' : 'Come si chiama la donna più bella al mondo ?',
+        'question' : 'Chi ha inventato l’iconico abitino nero ?',
         'responses' : [
             {
-                'text' : 'Jessica',
+                'text' : 'Versace',
                 'result' : false
 
             },
             {
-                'text' : 'Brigitte',
-                'result' : false
-
-            },
-            {
-                'text' : 'Natasha',
+                'text' : 'Coco Chanel',
                 'result' : true
 
             },
             {
-                'text' : 'Carmelaaaaa',
+                'text' : 'Armani',
+                'result' : false
+
+            },
+            {
+                'text' : 'Dior',
                 'result' : false
 
             }
 
         ]
-            
-            
         
     },
     {
-        'question' : 'La squadra migliore al mondo ?',
+        'question' : 'Quando ha aperto la metropolitana di Londra ?',
         'responses' : [
             {
-                'text' : 'Inter',
+                'text' : '1863',
                 'result' : true
 
             },
             {
-                'text' : 'Milan',
+                'text' : '1908',
                 'result' : false
 
             },
             {
-                'text' : 'Juventus',
+                'text' : '1924',
                 'result' : false
 
             },
             {
-                'text' : 'Fiorentina',
+                'text' : '1961',
                 'result' : false
 
             }
 
         ]
-            
-            
-        
+             
+    },
+    {
+        'question' : 'Da quale città provengono i Beatles ?',
+        'responses' : [
+            {
+                'text' : 'Manchester',
+                'result' : false
+
+            },
+            {
+                'text' : 'Londra',
+                'result' : false
+
+            },
+            {
+                'text' : 'Liverpool',
+                'result' : true
+
+            },
+            {
+                'text' : 'Birmingham',
+                'result' : false
+
+            }
+
+        ]
+             
+    },
+    {
+        'question' : 'Quale pilota ha vinto il maggior numero di campionati di Formula 1 ?',
+        'responses' : [
+            {
+                'text' : 'Michael Schumacher',
+                'result' : true
+
+            },
+            {
+                'text' : 'Mika Häkkinen',
+                'result' : false
+
+            },
+            {
+                'text' : 'Ayrton Senna',
+                'result' : false
+
+            },
+            {
+                'text' : 'Max Verstappen',
+                'result' : false
+
+            }
+
+        ]
+             
+    },
+    {
+        'question' : 'Quando è stata fondata Netflix ?',
+        'responses' : [
+            {
+                'text' : '2015',
+                'result' : false
+
+            },
+            {
+                'text' : '2009',
+                'result' : false
+
+            },
+            {
+                'text' : '2001',
+                'result' : false
+
+            },
+            {
+                'text' : '1997',
+                'result' : true
+
+            }
+
+        ]
+             
+    },
+    {
+        'question' : 'Qual è il nome della caffetteria nella sitcom Friends ?',
+        'responses' : [
+            {
+                'text' : 'Cafè Center',
+                'result' : false
+
+            },
+            {
+                'text' : 'Central Perk',
+                'result' : true
+
+            },
+            {
+                'text' : 'Cafè Station',
+                'result' : false
+
+            },
+            {
+                'text' : 'Central Park',
+                'result' : false
+
+            }
+
+        ]
+             
     }
 ]
 

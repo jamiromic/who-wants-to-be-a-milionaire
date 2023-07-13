@@ -1,26 +1,43 @@
 <template>
     <div class="container">
-        <QuestionComponent :randomNumber="randomNumber"/>
-        <ResponseComponent :randomNumber.sync="randomNumber"/>
+        <QuestionComponent v-if="!gameOver" 
+        :randomNumber="randomNumber"
+        />
+        <ResponseComponent v-if="!gameOver" 
+        :randomNumber.sync="randomNumber" 
+        :questionNumbers="questionNumbers" 
+        :gameOver.sync="gameOver" @update:gameOver="gameOver = $event"
+        :score.sync="score" @update:score="score = $event"
+        />
+        <FinalResultComponent v-if="gameOver" 
+        :score="score"
+        :questionNumbers="questionNumbers"
+        />
     </div>
 </template>
 
 <script>
 import QuestionComponent from './QuestionComponent.vue';
 import ResponseComponent from './ResponseComponent.vue';
+import FinalResultComponent from './FinalResultComponent.vue';
+import questions from '@/questions';
 
     export default {
         name: 'ContainerComponent',
 
         components: {
             QuestionComponent,
-            ResponseComponent
+            ResponseComponent,
+            FinalResultComponent,
 
         },
         data() {
             return {
+            questions : questions,
             randomNumber: null,
-            questionNumbers: [0,1,2,3], // Array per memorizzare i numeri casuali precedenti
+            questionNumbers: questions.length, // Array che contiene l'index delle domande disponibili
+            score: 0,
+            gameOver: false,
             };
         },
         created() {
@@ -28,8 +45,7 @@ import ResponseComponent from './ResponseComponent.vue';
         },
         methods: {
             casualNumber() {
-                const randomIndex = Math.floor(Math.random() * this.questionNumbers.length);
-                return this.questionNumbers[randomIndex];
+                return Math.round(Math.random() * 3);
             }
         }
 

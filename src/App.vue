@@ -15,6 +15,9 @@ export default {
   name: 'App',
   components: {
     ContainerComponent
+  },
+  mounted() {
+    this.questions.forEach(question => question.hidden = true);
   }
 }
 </script>
